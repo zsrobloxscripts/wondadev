@@ -59,8 +59,8 @@ const handleFileUploading = (file, uniqueIdentifier) => {
 const handleSelectedFiles = ([...files]) => {
     if(files.length === 0) return; // Check if no files are selected
     totalFiles += files.length;
-    files.forEach((file, index) => {
-        const uniqueIdentifier = Date.now() + index;
+    files.forEach((file, upload) => {
+        const uniqueIdentifier = Date.now() + upload;
         const fileItemHTML = createFileItemHTML(file, uniqueIdentifier);
         // Inserting each file item into file list
         fileList.insertAdjacentHTML("afterbegin", fileItemHTML);
